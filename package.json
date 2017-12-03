@@ -1,0 +1,20 @@
+{
+    "name": "EBprojectdemo",
+    "description": "NodeJS EXPRESS EJS app",
+    "author": "Bunny Edwin",
+    "version": "0.0.1",
+    "dependencies": {
+        "mongoose": "*",
+        "express": "*",
+        "ejs": "*",
+        "cookie-session": "*",
+        "body-parser": "*",
+        "mongodb": "latest",
+        "formidable": "latest",
+        "exif":"latest"
+    },
+    "engine": "node >= 0.10.0",
+    "scripts": {
+        "start": "node server"
+    }
+}

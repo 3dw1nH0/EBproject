@@ -1,0 +1,68 @@
+<html>
+<head>
+<title> Create New Restaurant </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+fieldset {
+     width: 500px;
+}
+label.field {
+     text-align: right;
+     width: 100px;
+     float: left;
+     font-weight: bold;
+}
+
+input.textbox-300 {
+     width: 300px;
+     float: left;
+}
+
+fieldset p {
+    clear: both;
+    padding: 5px;
+}
+
+</style>
+</head>
+<body>
+	<div class="w3-container w3-red">
+   	   <H1>Create New Restaurant</H1>
+	</div>
+	<form action="/newRestaurant" method="post" enctype="multipart/form-data">
+		<fieldset>		
+		<p><label class="field">Name</label>
+		<input type="text" name="title" class="textbox-300"></p>
+
+		<p><label class="field">Borough</label>
+		<input type="text" name="borough" class="textbox-300"></p>
+		
+		<p><label class="field">Cuisine</label>
+		<input type="text" name="cuisine" class="textbox-300"></p>
+		
+		<p><label class="field">Street</label>
+		<input type="text" name="street" class="textbox-300"></p>
+		
+		<p><label class="field">Building</label>
+		<input type="text" name="building" class="textbox-300"></p>
+		
+		<p><label class="field">Zipcode</label>
+		<input type="text" name="zipcode" class="textbox-300"></p>
+		
+		<p><label class="field">GPS (lon.)</label>
+		<input type="text" name="gpsLon" class="textbox-300"></p>
+		
+		<p><label class="field">GPS (lat.)</label>
+		<input type="text" name="gpsLat" class="textbox-300"></p>
+		
+		<p><label class="field">Photo</label>
+		<p><input name="filetoupload" type="file" required=""></p>
+
+		<p><input type="submit" name="submit" value="create"></p>
+
+ 		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title> <%= photos[0].name%> </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+</head>
+   <body>
+      <script>
+      function loadMap ()
+      {
+        var myLatLng = {lat: <%= photos[0].address.coord%>, lng: <%= photos[0].address.coord[1]%>};
+        //var myLatLng = new google.maps.LatLng({lat: 35.693505, lng: 139.701629});
+        var map = new google.maps.Map(document.getElementById("map"),{
+              zoom: 18,
+              center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+           position: myLatLng,
+           map: map,
+           title: '<%= photos[0].name%>'
+        });
+      }
+      </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkfp0OSPZ0fl8ZF3a0tea-mp36-mp_8b8&callback=loadMap"></script>
+      <div class="w3-container w3-red">
+      <H1><%= photos[0].name %></H1>
+      </div>
+      <form>
+            <img src="data:<%= photos[0].mimetypae%>;base64, <%= photos[0].image%>" class="w3-image w3-border w3-padding" style="width:100%">
+            <div class="w3-container"><p>
+               <label class="w3-text-red">Borough: </label><%= photos[0].borough%></p>
+               <label class="w3-text-red">Cuisine: </label><%= photos[0].cuisine%></p>
+               <label class="w3-text-red">Street: </label><%= photos[0].address.street%></p>
+               <label class="w3-text-red">Building: </label><%= photos[0].address.building%></p>
+               <label class="w3-text-red">Zipcode: </label><%= photos[0].address.zipcode%></p>
+               <label class="w3-text-red">GPS: </label>[<%= photos[0].address.coord%>]</p>
+               <label class="w3-text-red">Rating: </label></p>
+               <ol>
+                  <%
+                     if(photos[0].grades.length>0){
+                        for(var i = 0; i<photos[0].grades.length; i++){ %>
+                           <li><%=photos[0].grades[i].mark%>(<%=photos[0].grades[i].name%>)</li>
+                  <% }}%>
+               </ol>
+               <p>
+               <label class="w3-text-red">Created by: </label><%= photos[0].owner%></p>
+               <p>
+                  <a href="/gps?lat=<%= photos[0].address.coord[0]%>&lon=<%= photos[0].address.coord[1]%>&title=<%= photos[0].name%>">Google Map</a>
+            </div>
+            <input class="w3-btn w3-section w3-red w3-ripple" type="button" onclick="window.location.href='/rate?_id=<%=photos[0]._id%>'" value="Rate">
+            <input class="w3-btn w3-section w3-red w3-ripple" type="button" onclick="window.location.href='/edit?_id=<%= photos[0]._id%>&owner=<%=photos[0].owner%>'" value="Edit">
+            <input class="w3-btn w3-section w3-red w3-ripple" type="button" onclick="window.location.href='/Delete?_id=<%=photos[0]._id%>&owner=<%=photos[0].owner%>'" value="Delete">
+            <input class="w3-btn w3-section w3-red w3-ripple" type="button" onclick="window.history.back()" value="Go Back">
+      </form>
+   </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title> Registration </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+fieldset {
+     width: 500px;
+}
+label.field {
+     text-align: right;
+     width: 100px;
+     float: left;
+     font-weight: bold;
+}
+
+input.textbox-300 {
+     width: 300px;
+     float: left;
+}
+
+fieldset p {
+    clear: both;
+    padding: 5px;
+}
+
+</style>
+
+</head>
+<body>
+	<form action="/reg" method="post" enctype="multipart/form-data">
+		<fieldset>
+		<p><label class="field">Username:</label> <input type="text" name="name" required></p>
+		<p><label class="field">Password:</label> <input type="password" name="password" required></p>
+	<input class="w3-btn w3-section w3-red w3-ripple" type="submit" value="Registration">
+	<a href="/login">Login</a>
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Edit New Restaurant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+   <body>
+      <div class="w3-container w3-red">
+         <h1>Modify Your Restaurant</h1>
+      </div>
+      <form action="/edit?_id=<%= photos[0]._id%>&owner=<%= photos[0].owner%>" method="post" enctype="multipart/form-data" class="w3-container" style="width:100%">
+	       
+               <p><label class="w3-text-red">Name: </label><input type="text" name="title" class="w3-input" value="<%= photos[0].name %>" required></p>
+               <p><label class="w3-text-red">Borough: </label><input type="text" name="borough" class="w3-input" value="<%= photos[0].borough%>"></p>
+               <p><label class="w3-text-red">Cuisine: </label><input type="text" name="cuisine" class="w3-input" value="<%= photos[0].cuisine%>"></p>
+               <p><label class="w3-text-red">Street: </label><input type="text" name="street" class="w3-input" value="<%= photos[0].address.street%>"></p>
+               <p><label class="w3-text-red">Building: </label><input type="text" name="building" class="w3-input" value="<%= photos[0].address.building%>"></p>
+               <p><label class="w3-text-red">Zipcode: </label><input type="text" name="zipcode" class="w3-input" value="<%= photos[0].address.zipcode%>"></p>
+               <p><label class="w3-text-red">GPS (lon.)</label><input type="text" name="gpsLon" class="w3-input" value="<%= photos[0].address.coord[0]%>"></p></p>
+               <p><label class="w3-text-red">GPS (lat.)</label><input type="text" name="gpsLat" class="w3-input" value="<%= photos[0].address.coord[1]%>"></p></p>
+               <p><label class="w3-text-red">Photo</label></p>
+               <input name="filesToUpload" type="file"></p>
+               
+            
+            <input class="w3-btn w3-section w3-red w3-ripple" type="button" onclick="window.history.back()" value="Go Back">
+            <input class="w3-btn w3-section w3-red w3-ripple" type="submit" name="update">
+	
+      </form>
+   </body>
+</html>
